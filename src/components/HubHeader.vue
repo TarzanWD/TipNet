@@ -1,5 +1,5 @@
 <template>
-  <ul class="nav justify-content-start">
+  <ul class="nav">
     <li class="nav-item">
         <button class="home-btn">
             <i class="fa fa-home fa-2x"></i>
@@ -61,6 +61,11 @@
             a{
                 color: @text;
             }
+        }
+    }
+    @media (max-width: @md) {
+        .nav li:first-child{
+            display: none;
         }
     }
 </style>
