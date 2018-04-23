@@ -2,9 +2,9 @@
   <div class="card">
     <div class="card-header">
       <img src="http://icons.iconarchive.com/icons/giannis-zographos/spanish-football-club/256/FC-Barcelona-icon.png" alt="Fc Barcelona" class="logo">
-      <h4> 
+      <h4>
         <span>
-            FC Barcelona    
+            FC Barcelona
         </span>
         <span v-if="played === false" class="divider">
             -
@@ -28,7 +28,7 @@
         </h4>
       </div>
       <div v-else-if="played === true">
-        
+
       </div>
     </div>
     <div class="card-footer">
@@ -44,18 +44,15 @@
 <script>
 export default {
   props: [
-      "played"
+    'played'
   ]
 }
 </script>
 <style lang="less" scoped>
     @import '../../public/css/config.less';
     .card{
-        display: inline-block;
-        margin: @spacer @spacer * 0.5;
+        display: block;
         font-family: @font;
-        width: 49.2%;
-        float: left;
         .card-header{
             display: flex;
             justify-content: space-between;
@@ -71,7 +68,7 @@ export default {
                 display: inline-block;
                 margin-bottom:0;
                 padding: @spacer;
-                
+
                 .divider{
                     margin: 0 @spacer*2;
                 }
@@ -110,18 +107,17 @@ export default {
             a{
                 color: @background-gray;
                 text-transform: uppercase;
-                text-decoration: none;   
+                text-decoration: none;
             }
 
             &:hover{
-                background: @cl-color-lighten;  
+                background: @cl-color-lighten;
             }
         }
     }
     @media (max-width: @xxl) {
        .card .card-header h3{
           font-size: 1.5rem;
-       } 
+       }
     }
 </style>
-

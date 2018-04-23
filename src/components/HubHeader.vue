@@ -1,12 +1,12 @@
 <template>
   <ul class="nav">
     <li class="nav-item">
-        <button class="home-btn">
+        <router-link class="home-btn d-flex" to="/">
             <i class="fa fa-home fa-2x"></i>
-        </button>
+        </router-link>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">Zápasy</a>
+        <router-link class="nav-link" to="/matches">Zápasy</router-link>
     </li>
     <li class="nav-item">
         <a class="nav-link" href="#">Pořadí</a>
@@ -17,30 +17,33 @@
     <li class="nav-item">
         <a class="nav-link" href="#">Diskuze</a>
     </li>
-
+    <button class="collapse-btn home-btn">
+        MENU
+    </button>
   </ul>
 </template>
 
 <style lang="less" scoped>
     @import '../../public/css/config.less';
     .nav{
-        height: 5rem;
+        grid-area: hub-header;
         align-items: center;
-        margin-bottom: @spacer * 5;
         font-family: @heading-font;
         background: @background-gray;
-        
+        .collapse-btn{
+            display: none;
+            .header-m;
+        }
         .home-btn{
             height: 5rem;
             width: 5rem;
-            display: flex;
             justify-content: center;
             align-items: center;
             border: 0;
             color: @background-gray;
             background: @cl-color;
             cursor: pointer;
-
+            text-decoration: none;
             &:hover{
                 background: @cl-color-lighten;
             }
@@ -48,30 +51,35 @@
 
         li{
             padding-left: 5 * @spacer;
-            
             &:first-child{
                 padding-left:0;
-            }
-
-            &.active{
-                font-weight: 600;
-                color: @cl-color;
+                margin-left: @spacer * 0.5;
             }
 
             a{
                 color: @text;
+                &.active{
+                    font-weight: 600;
+                }
             }
         }
     }
     @media (max-width: @md) {
-        .nav li:first-child{
+        .nav-item{
             display: none;
+        }
+        .nav{
+           justify-content: flex-end; 
+            .collapse-btn{
+                display: flex;
+                margin-right: @spacer * 0.5;
+            }
         }
     }
 </style>
 
 <script>
 export default {
-  
+
 }
 </script>

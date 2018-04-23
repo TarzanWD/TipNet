@@ -16,12 +16,10 @@
                         </tr>
                     </tbody>
                 </table>
-                <a class="more">
-                    Celé pořadí
-                </a>
+                <button type="button" class="btn btn-outline-secondary btn-lg btn-block more">Více</button>
             </div>
-        </div>                            
-  
+        </div>
+
 </template>
 <script>
 export default {}
@@ -29,8 +27,6 @@ export default {}
 <style lang="less" scoped>
     @import '../../public/css/config.less';
     .table-card{
-        margin: @spacer @spacer * 0.5;
-
         .card-header{
             background: #fff;
             padding: @spacer * 2;
@@ -39,7 +35,6 @@ export default {}
                 padding: @spacer;
             }
         }
-        
         table{
             tr:first-child td{
                 border-top: 0;
@@ -51,4 +46,3 @@ export default {}
         }
     }
 </style>
-

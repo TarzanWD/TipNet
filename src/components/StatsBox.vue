@@ -1,19 +1,21 @@
 <template>
-  <div class="card from-last-day">
+  <div class="card statsbox">
     <div class="card-body">
       <span class="title">
           <slot name="header"></slot>
       </span>
       <h4 class="points">
-          <slot></slot>
+          <slot name="points"></slot>
       </h4>
+      <div class="teams">
+          <slot name="teams"></slot>
+      </div>
     </div>
   </div>
 </template>
 <style lang="less" scoped>
     @import '../../public/css/config.less';
-    .from-last-day{
-        margin-top: @spacer;
+    .statsbox{
         .title{
             display: inline-block;
             width:100%;
@@ -29,4 +31,3 @@
         }
     }
 </style>
-

@@ -1,0 +1,240 @@
+.header-m {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+}
+.grid {
+  display: grid;
+  grid-template-rows: 25rem auto 5rem;
+  grid-template-columns: 5rem auto 5rem;
+  width: 100%;
+  grid-template-areas: "poster poster poster" ". content ." "footer footer footer";
+}
+.content {
+  grid-area: content;
+  z-index: 10;
+  background: #eaeaea;
+  margin-top: -5rem;
+  display: grid;
+}
+.content .card {
+  margin: 0.25rem 0.25rem 0 0.25rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+.content .card-list {
+  display: grid;
+  grid-template-rows: 15rem 15rem 5rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "card1 card2" "card3 card4" "more-btn more-btn";
+}
+.content .section-header {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  margin-left: 1.5rem;
+}
+.content .more {
+  grid-area: more-btn;
+  display: inline-block;
+  width: 99%;
+  border-top: 0;
+  border-color: #0C2F54;
+  color: #0C2F54;
+  margin: 1rem 0.25rem;
+  border-radius: 0 0 3px 3px;
+}
+.content .more:hover {
+  background: #0C2F54;
+  color: #fff;
+}
+.content .table {
+  width: 100%;
+}
+.content .table th {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #eaeaea;
+  border-top: 0;
+}
+.content .table th:first-child {
+  text-align: left;
+}
+.content .table td {
+  vertical-align: middle;
+}
+.content .table td:nth-child(7n + 5) {
+  text-align: left;
+}
+.content .table tr {
+  cursor: pointer;
+}
+.content .table .group,
+.content .table .tip,
+.content .table .result {
+  text-align: center;
+}
+.content .table .team {
+  text-align: right;
+}
+.content .table .team .team-badge {
+  display: inline-block;
+  max-width: 2rem;
+  margin: 0 1rem;
+}
+.content .table .separator {
+  width: 3rem;
+  text-align: center;
+}
+.content .table .points {
+  width: 3rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+.content .table .points.green {
+  background: #5cb85c;
+  color: #eaeaea;
+}
+.content .table .points.orange {
+  background: #f0ad4e;
+  color: #eaeaea;
+}
+@media (max-width: 95rem) {
+  .grid {
+    grid-template-areas: "poster poster poster" "content content content" "footer footer footer";
+  }
+  .content .card-list {
+    grid-template-rows: 14.5rem 14.5rem 14.5rem 14.5rem 5rem;
+    grid-template-columns: 1fr;
+    grid-template-areas: "card1" "card2" "card3" "card4" "more-btn";
+  }
+}
+.grid {
+  display: grid;
+  grid-template-rows: 25rem auto 5rem;
+  grid-template-columns: 5rem auto 5rem;
+  width: 100%;
+  grid-template-areas: "poster poster poster" ". content ." "footer footer footer";
+}
+.content {
+  grid-area: content;
+  z-index: 10;
+  background: #eaeaea;
+  margin-top: -5rem;
+  display: grid;
+}
+.content .card {
+  margin: 0.25rem 0.25rem 0 0.25rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+.content .card-list {
+  display: grid;
+  grid-template-rows: 15rem 15rem 5rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "card1 card2" "card3 card4" "more-btn more-btn";
+}
+.content .section-header {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  margin-left: 1.5rem;
+}
+.content .more {
+  grid-area: more-btn;
+  display: inline-block;
+  width: 99%;
+  border-top: 0;
+  border-color: #0C2F54;
+  color: #0C2F54;
+  margin: 1rem 0.25rem;
+  border-radius: 0 0 3px 3px;
+}
+.content .more:hover {
+  background: #0C2F54;
+  color: #fff;
+}
+.content .table {
+  width: 100%;
+}
+.content .table th {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #eaeaea;
+  border-top: 0;
+}
+.content .table th:first-child {
+  text-align: left;
+}
+.content .table td {
+  vertical-align: middle;
+}
+.content .table td:nth-child(7n + 5) {
+  text-align: left;
+}
+.content .table tr {
+  cursor: pointer;
+}
+.content .table .group,
+.content .table .tip,
+.content .table .result {
+  text-align: center;
+}
+.content .table .team {
+  text-align: right;
+}
+.content .table .team .team-badge {
+  display: inline-block;
+  max-width: 2rem;
+  margin: 0 1rem;
+}
+.content .table .separator {
+  width: 3rem;
+  text-align: center;
+}
+.content .table .points {
+  width: 3rem;
+  text-align: center;
+  font-size: 1.5rem;
+}
+.content .table .points.green {
+  background: #5cb85c;
+  color: #eaeaea;
+}
+.content .table .points.orange {
+  background: #f0ad4e;
+  color: #eaeaea;
+}
+@media (max-width: 95rem) {
+  .grid {
+    grid-template-areas: "poster poster poster" "content content content" "footer footer footer";
+  }
+  .content .card-list {
+    grid-template-rows: 14.5rem 14.5rem 14.5rem 14.5rem 5rem;
+    grid-template-columns: 1fr;
+    grid-template-areas: "card1" "card2" "card3" "card4" "more-btn";
+  }
+}

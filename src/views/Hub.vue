@@ -1,155 +1,164 @@
 <template>
     <div class="grid">
-        <div class="poster">
-            <app-header></app-header>
-        </div>
+        <app-header></app-header>
         <div class="content">
-            <div class="container-fluid">
-                <div v-show="hideNav === false">
-                    <hub-header></hub-header>
-                </div>
-                <div class="row">
-                    <div class="col-8">
-                        <h5 class="section-header">
-                            Nadcházející zápasy
-                        </h5>
-                    </div>
-                    <div class="col-4">
-                        <h5 class="section-header">
-                            Statistiky
-                        </h5>
-                    </div>
-                    <div class="col-md-8">
-                        <match-card :played="false"></match-card>
-                        <match-card :played="false"></match-card>
-                        <match-card :played="false"></match-card>
-                        <match-card :played="false"></match-card>
-                        <a class="more">
-                            Všechny zápasy
-                        </a>
-                    </div>
-                    <div class="col-md-2">
-                        <stats-box>
-                            <template slot="header">
-                                Vaše umístění
-                            </template>
-                            <slot>
-                                27.
-                            </slot>
-                        </stats-box>
-                    </div>
-                    <div class="col-md-2">
-                        <stats-box>
-                            <template slot="header">
-                                Poslední hrací den
-                            </template>
-                            <slot>
-                                5b.
-                            </slot>
-                        </stats-box>
-                    </div>
-                    <div class="col-8">
-                        <h5 class="section-header">
-                            Poslední odehrané
-                        </h5>
-                    </div>
-                    <div class="col-md-4">
-                        <h5 class="section-header">
-                            Tabulka
-                        </h5>
-                    </div>
-                    <div class="col-md-8">
-                        <match-card :played="true"></match-card>
-                        <match-card :played="true"></match-card>
-                        <match-card :played="true"></match-card>
-                        <match-card :played="true"></match-card>
-                    </div>
-                    <div class="col-md-4">
-                        <user-table></user-table>
-                    </div>
-                </div>
+            <hub-header></hub-header>
+            <h5 class="section-header lpc-heading">
+                Poslední odehrané
+            </h5>
+            <div class="card-list last-played">
+                <match-card :played="false"></match-card>
+                <match-card :played="false"></match-card>
+                <match-card :played="false"></match-card>
+                <match-card :played="false"></match-card>
+                <button class="btn btn-outline-secondary btn-lg btn-block more"> Více </button>
             </div>
+            <stats-box class="points-last-day">
+                <template slot="header">
+                    Poslední den
+                </template>
+                <template slot="points">
+                    5b.
+                </template>
+            </stats-box>
+            <stats-box class="position">
+                <template slot="header">
+                    Pozice
+                </template>
+                <template slot="points">
+                    19.
+                </template>
+            </stats-box>
+            <div class="user-table">
+                <user-table></user-table>
+            </div>
+            <h5 class="section-header nuc-heading">
+                Následující zápasy
+            </h5>
+            <div class="card-list next-up">
+                <match-card :played="true"></match-card>
+                <match-card :played="true"></match-card>
+                <match-card :played="true"></match-card>
+                <match-card :played="true"></match-card>
+                <button class="btn btn-outline-secondary btn-lg btn-block more"> Více </button>
+            </div>
+            <discussion></discussion>
         </div>
+        <app-footer>
+        </app-footer>
     </div>
 </template>
 <script>
-import AppHeader from '@/components/AppHeader.vue'
+import AppHeader from '@/components/layout/AppHeader.vue'
 import HubHeader from '@/components/HubHeader.vue'
+import AppFooter from '@/components/layout/AppFooter.vue'
 import MatchCard from '@/components/MatchCard.vue'
 import UserTable from '@/components/UserTable.vue'
 import StatsBox from '@/components/StatsBox.vue'
+import Discussion from '@/components/Discussion.vue'
 export default {
   components: {
-    'app-header' : AppHeader,
-    'hub-header' : HubHeader,
-    'match-card' : MatchCard,
-    'user-table' : UserTable,
-    'stats-box' : StatsBox
+    'app-header': AppHeader,
+    'hub-header': HubHeader,
+    'match-card': MatchCard,
+    'user-table': UserTable,
+    'stats-box' : StatsBox,
+    'discussion': Discussion,
+    'app-footer': AppFooter
   },
   computed: {
     hideNav () {
-        let content = document.getElementsByClassName("content")
-        return content.offsetTop <= window.scrollY ? true : false
+      return 320 < window.scrollY
     }
   }
 }
 </script>
 <style lang="less">
     @import '../../public/css/config.less';
-    body{
-        background: @background-gray-darker;
-    }
-
-    .grid{
-        display: grid;
-        grid-template-rows: 25rem auto;
-        grid-template-columns: (@spacer*10) auto (@spacer*10);
+    .content{
+        grid-template-rows: 5rem 3rem auto auto 3rem auto auto auto 3rem;
+        grid-template-columns: (@spacer * 4) 2fr 2fr 1fr 1fr (@spacer * 4);
         grid-template-areas: 
-            "poster poster poster"
-            ". content .";
-        width:100%;
-        .poster{
-            grid-area: poster;
-            box-sizing: border-box;
-            position: relative;
-            display: inline-block;
-            background-image: url('../../public/img/cl-poster.jpg');
-            background-size: cover;
-            background-position: center bottom;
+            ". hub-header hub-header hub-header hub-header ."
+            ". lpc-heading lpc-heading . . ."
+            ". last-played-cards last-played-cards points-last-day position-box ."
+            ". last-played-cards last-played-cards user-table user-table ."
+            ". nuc-heading nuc-heading user-table user-table ."
+            ". next-up-cards next-up-cards user-table user-table ."
+            ". next-up-cards next-up-cards . . ."
+            ". discussion discussion . . ."
+            ". . . . . .";
+        .lpc-heading{
+            grid-area: lpc-heading;
         }
-
-        .content{
-            grid-area: content;
-            z-index: 10;
-            background: @background-gray;
-            margin-top: -10 * @spacer;
-            .section-header{
-                .header-m;
-                font-size: 1rem;
-                margin-left: @spacer;
-            }
-            .more{
-                display: flex;
-                width: 100%;
-                height: @spacer * 5;
-                justify-content: center;
-                align-items: center;
-                font-weight: 500;
-                text-decoration: underline;
-                color: @cl-color;
-                cursor: pointer;
-                &:hover{
-                    color: @cl-color-lighten;
-                }
-            }
+        .nuc-heading{
+            grid-area: nuc-heading;
+        }
+        .last-played{
+            grid-area: last-played-cards;
+        }
+        .next-up{
+            grid-area: next-up-cards;
+        }
+        .points-last-day{
+            grid-area: points-last-day;
+        }
+        .position{
+            grid-area: position-box;
+        }
+        .user-table{
+            grid-area: user-table;
         }
     }
     @media (max-width: @xxl) {
-        .grid{
+        .content{
+            grid-template-columns: (@spacer * 4) 5fr 2fr 2fr (@spacer * 4);
             grid-template-areas: 
-            "poster poster poster"
-            "content content content";  
+                ". hub-header hub-header hub-header ."
+                ". lpc-heading lpc-heading . ."
+                ". last-played-cards points-last-day position-box ."
+                ". last-played-cards user-table user-table ."
+                ". nuc-heading user-table user-table ."
+                ". next-up-cards user-table user-table ."
+                ". next-up-cards . . ."
+                ". discussion .  . ."
+                ". . .  . .";
         }
     }
+    @media (max-width: @lg) {
+       .content{
+            grid-template-rows: 5rem 1rem auto 3rem auto auto 3rem auto auto auto 3rem;
+            grid-template-columns: (@spacer * 4) 1fr 1fr (@spacer * 4);
+            grid-template-areas: 
+                    " . hub-header hub-header . "
+                    ". . . ."
+                    ". points-last-day position-box ."
+                    ". lpc-heading lpc-heading ."
+                    ". last-played-cards last-played-cards ."
+                    ". last-played-cards last-played-cards ."
+                    ". nuc-heading nuc-heading ."
+                    ". next-up-cards next-up-cards ."
+                    ". next-up-cards next-up-cards ."
+                    ". discussion discussion ."
+                    ". . . .";
+       }
+       .table-card{
+            display: none !important;
+        }
+    }
+    @media (max-width: @md) {
+        grid-template-rows: 3rem 1rem auto 3rem auto auto 3rem auto auto auto 3rem;
+        grid-template-areas: 
+                    " hub-header hub-header hub-header hub-header "
+                    ". . . ."
+                    ". points-last-day position-box ."
+                    ". lpc-heading lpc-heading ."
+                    ". last-played-cards last-played-cards ."
+                    ". last-played-cards last-played-cards ."
+                    ". nuc-heading nuc-heading ."
+                    ". next-up-cards next-up-cards ."
+                    ". next-up-cards next-up-cards ."
+                    ". discussion discussion ."
+                    ". . . .";
+    }
 </style>
-
