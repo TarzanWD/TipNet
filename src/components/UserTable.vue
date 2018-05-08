@@ -1,9 +1,15 @@
 <template>
         <div class="card table-card">
             <div class="card-body">
-                <table class="table user-table">
+                <div class="input-group">
+                    <label for="user-search-box" class="header-m">
+                        Hledej:
+                    </label>
+                    <input type="text" class="input" placeholder="Jméno hráče..." name="user-search-box">
+                </div>
+                <table class="table user-table table-hover">
                     <tbody>
-                        <tr v-for="n in 10">
+                        <tr v-for="n in 10" :key="n">
                             <td>
                                 {{n}} .
                             </td>
@@ -16,7 +22,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <button type="button" class="btn btn-outline-secondary btn-lg btn-block more">Více</button>
+                <router-link type="button" class="btn btn-outline-secondary btn-lg btn-block more" to="/table" tag="button">Celé pořadí</router-link>
             </div>
         </div>
 

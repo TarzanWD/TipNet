@@ -1,5 +1,5 @@
 <template>
-  <footer class="app-footer">
+  <footer class="app-footer" role="contentinfo">
       <h5 class="brand">
         TIPNET
       </h5>
@@ -14,7 +14,7 @@
 export default {}
 </script>
 <style lang="less" scoped>
-@import '../../../public/css/config.less';
+@import '../../public/css/config.less';
     .app-footer{
         grid-area: footer;
         display: flex;
@@ -36,4 +36,3 @@ export default {}
         }
     }
 </style>
-

@@ -1,7 +1,7 @@
 <template>
   <div class="card discussion">
       <div class="card-body">
-          <div class="post">
+          <div class="post" v-for="n in commentsToRender" :key="n">
                 <div class="side">
                     <h5>
                         junior
@@ -11,28 +11,27 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vulputate egestas diam a mollis. Fusce semper ex at suscipit dictum. Nam faucibus non orci sit amet ornare. Curabitur elementum posuere augue, vel hendrerit purus ornare nec. Sed fermentum et arcu quis suscipit. Pellentesque sodales, massa vel semper iaculis, lorem nisi sagittis turpis, non auctor libero elit auctor nulla.
                 </div>
           </div>
-          <div class="post">
-                <div class="side">
-                    <h5>
-                        junior
-                    </h5>
-                </div>
-                <div class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </div>
-          </div>
           <div class="add-post">
               <span class="title">
                   Váš příspěvek
               </span>
               <textarea rows="5"></textarea>
           </div>
-          <button type="button" class="btn btn-outline-secondary btn-lg btn-block more">Celá diskuze</button>
+          <router-link type="button" class="btn btn-outline-secondary btn-lg btn-block more" to="/discussion" tag="button" v-show="!fullDiscussion">Celá diskuze</router-link>
       </div>
   </div>
 </template>
 <script>
-export default {}
+export default {
+  props: [
+    'fullDiscussion'
+  ],
+  computed: {
+    commentsToRender () {
+      return this.fullDiscussion ? 5 : 3
+    }
+  }
+}
 </script>
 <style lang="less" scoped>
     @import '../../public/css/config.less';

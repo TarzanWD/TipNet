@@ -1,7 +1,18 @@
-@import '../../public/css/config.less';
+@import '_variables.less';
 .header-m{
     font-family: 'Poppins',sans-serif;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.15rem;
+}
+.shorter{
+    display: none;
+}
+@media (max-width: @md) {
+    .shorter{
+        display: inline;
+    }
+    .longer{
+        display: none;
+    }
 }

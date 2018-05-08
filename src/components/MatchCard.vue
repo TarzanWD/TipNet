@@ -2,34 +2,46 @@
   <div class="card">
     <div class="card-header">
       <img src="http://icons.iconarchive.com/icons/giannis-zographos/spanish-football-club/256/FC-Barcelona-icon.png" alt="Fc Barcelona" class="logo">
-      <h4>
-        <span>
+      <div class="heading">
+        <h4>
             FC Barcelona
-        </span>
-        <span v-if="played === false" class="divider">
-            -
-        </span>
-        <span v-else-if="played === true" class="divider">
-            0 : 3
-        </span>
-        <span>
+                -
             Real Madrid
-        </span>
-      </h4>
+        </h4>
+        <small>
+            20.04.2018 10:45
+        </small>
+      </div>
       <img src="http://icons.iconarchive.com/icons/giannis-zographos/spanish-football-club/256/Real-Madrid-icon.png" alt="Real Madrid" class="logo">
     </div>
     <div class="card-body">
-      <div v-if="played === false">
-        <div class="heading">
-            TIP
+        <div class="card-grid">
+            <div class="tip">
+                <h5 class="heading">
+                    Tip
+                </h5>
+                <div class="block">
+                    0 : 3
+                </div>
+            </div>
+            <div class="result">
+                <h5 class="heading">
+                    <span class="longer">Výsledek</span>
+                    <span class="shorter">Výs</span>
+                </h5>
+                <div class="block">
+                    - : -
+                </div>
+            </div>
+            <div class="points">
+                <h5 class="heading">
+                    Body
+                </h5>
+                <div class="block">
+                    ?
+                </div>
+            </div>
         </div>
-        <h4>
-            2 : 2
-        </h4>
-      </div>
-      <div v-else-if="played === true">
-
-      </div>
     </div>
     <div class="card-footer">
         <div v-if="played">
@@ -59,41 +71,52 @@ export default {
             align-items: center;
             background: #fff;
             padding: @spacer * 2;
-
+            .heading{
+                display: flex;
+                flex-flow: column nowrap;
+                align-items: center;
+                h4{
+                    display: inline-block;
+                    margin-bottom:0;
+                    padding: @spacer;
+                }
+                small{
+                    font-size: 0.95rem;
+                }
+            }
             .logo{
                 max-width: @spacer * 4;
-            }
-
-            h4{
-                display: inline-block;
-                margin-bottom:0;
-                padding: @spacer;
-
-                .divider{
-                    margin: 0 @spacer*2;
-                }
             }
         }
 
         .card-body{
-            .tip{
-                display: inline-block;
-                width: 80%;
-            }
-            .points{
-                display: inline-block;
-                width:20%;
-                background: red;
-            }
-            .heading{
-                font-family: @heading-font;
-                font-weight: 600;
-                display: inline-block;
-                width:100%;
-            }
-
-            h4{
-                text-align: center;
+            padding:0;
+            .card-grid{
+                position: relative;
+                width: 100%;
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content: space-between;
+                align-items: center;
+                padding: @spacer * 2;
+                padding-bottom: @spacer * 3;
+                .tip,.result,.points{
+                    display: flex;
+                    flex-flow: column nowrap;
+                    width: 33.3%;
+                    .heading{
+                        width: 100%;
+                        text-align: center;
+                        padding: @spacer;
+                        font-size: 0.8rem;
+                        .header-m;
+                    }
+                    .block{
+                        width: 100%;
+                        text-align: center;
+                        font-size: 1.3rem;
+                    }
+                }
             }
         }
 
@@ -101,7 +124,7 @@ export default {
             display: flex;
             justify-content: center;
             align-items: center;
-            background:@cl-color;
+            background:var(--theme);
             cursor: pointer;
 
             a{
@@ -111,13 +134,21 @@ export default {
             }
 
             &:hover{
-                background: @cl-color-lighten;
+                background: var(--theme-lighten);
             }
         }
     }
-    @media (max-width: @xxl) {
-       .card .card-header h3{
-          font-size: 1.5rem;
-       }
+    @media (max-width: @md) {
+        .heading h4{
+           font-size: 1.2rem;
+        }
+    }
+    @media (max-width: @sm) {
+        .card .card-header{
+            justify-content: center;
+            .logo{
+                display: none;
+            }
+        }
     }
 </style>

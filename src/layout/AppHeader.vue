@@ -1,6 +1,6 @@
 <template>
-<div class="poster">
-  <nav class="navbar navbar-dark navbar-expand">
+<header class="poster" role="banner">
+  <nav class="navbar navbar-dark navbar-expand" id="app-navbar">
       <a class="navbar-brand" href="#">TIPNET</a>
       <div class="collapse navbar-collapse justify-content-end">
         <ul class="navbar-nav">
@@ -15,21 +15,19 @@
         </ul>
       </div>
   </nav>
-</div>
+</header>
 </template>
 <script>
 export default {
-
 }
 </script>
 <style lang="less" scoped>
-  @import '../../../public/css/config.less';
+  @import '../../public/css/config.less';
     .navbar{
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
-
       .navbar-brand{
         .header-m;
       }
@@ -43,8 +41,14 @@ export default {
       box-sizing: border-box;
       position: relative;
       display: inline-block;
-      background-image: url('../../../public/img/cl-poster.jpg');
+      background-image: url('../../public/img/cl-poster.jpg');
       background-size: cover;
       background-position: center bottom;
+      z-index: 0;
+    }
+    @media (max-width: @md) {
+      .collapse ul{
+        display: none;
+      }
     }
 </style>

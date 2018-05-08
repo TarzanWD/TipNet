@@ -4,12 +4,7 @@
       <span class="title">
           <slot name="header"></slot>
       </span>
-      <h4 class="points">
-          <slot name="points"></slot>
-      </h4>
-      <div class="teams">
-          <slot name="teams"></slot>
-      </div>
+      <slot></slot>
     </div>
   </div>
 </template>
@@ -22,12 +17,9 @@
             text-align: center;
             .header-m;
         }
-        .points{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: @spacer * 19;
-            font-size: @spacer * 8;
-        }
     }
 </style>
+<script>
+export default {
+}
+</script>
