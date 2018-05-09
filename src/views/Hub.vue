@@ -60,8 +60,6 @@ import MatchCard from '@/components/MatchCard.vue'
 import UserTable from '@/components/UserTable.vue'
 import StatsBox from '@/components/StatsBox.vue'
 import Discussion from '@/components/DiscussCard.vue'
-//
-import appService from '@/app.service'
 export default {
   components: {
     'app-header': AppHeader,

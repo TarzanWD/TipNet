@@ -40,7 +40,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="n in 42">
+                <tr v-for="n in 42" :key="n">
                   <td>
                     {{n}}.
                   </td>
