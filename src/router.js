@@ -1,10 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Hub from '@/views/Hub.vue'
+import Event from '@/views/Event.vue'
 import Matches from '@/views/Matches.vue'
 import Table from '@/views/Table.vue'
 import Rules from '@/views/Rules.vue'
 import Discussion from '@/views/Discussion.vue'
+import NotFound from '@/views/NotFound.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -12,9 +14,9 @@ export default new Router({
   linkExactActiveClass: 'active',
   routes: [
     {
-      path: '/',
-      name: 'hub',
-      component: Hub
+      path: '/event',
+      name: 'event',
+      component: Event
     },
     {
       path: '/matches',
@@ -35,6 +37,16 @@ export default new Router({
       path: '/discussion',
       name: 'discussion',
       component: Discussion
+    },
+    {
+      path: '/',
+      name: 'hub',
+      component: Hub
+    },
+    {
+      path: '*',
+      name: 'notfound',
+      component: NotFound
     }
   ]
 })

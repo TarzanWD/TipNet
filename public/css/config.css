@@ -19,6 +19,7 @@ body {
   font-family: 'Roboto', sans-serif;
   background: #fff;
   overflow-x: hidden;
+  padding: 0;
 }
 p {
   font-size: calc(0.25vw + 0.95rem);
@@ -43,12 +44,17 @@ p {
 .button:hover {
   background: #ff900a;
 }
+.group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .main-container {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 8fr 1fr;
   grid-template-rows: 100vh auto auto;
-  grid-template-areas: "landing-photo landing-photo landing-photo" ". about . " "advanteges advanteges advanteges";
+  grid-template-areas: "landing-photo landing-photo landing-photo" ". about . " "steps steps steps";
 }
 .main-container .transparent-nav {
   position: fixed;
@@ -64,6 +70,18 @@ p {
   padding: 0 3%;
   background: transparent;
   color: #fff;
+  transition: all 0.5s ease-in-out;
+}
+.main-container .transparent-nav .group {
+  display: none;
+}
+.main-container .transparent-nav.active {
+  background: #fff;
+  color: #111;
+  box-shadow: 0 5px #eaeaea;
+}
+.main-container .transparent-nav.active .group {
+  display: flex;
 }
 .main-container .transparent-nav__brand {
   font-size: calc(0.5vw + 1rem);
@@ -76,9 +94,10 @@ p {
 .main-container .landing-photo {
   grid-area: landing-photo;
   background: url('../img/landing-page-bg3.jpg');
-  background-size: cover;
-  background-position: center bottom;
   background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: none;
 }
 .main-container .content {
   height: 100vh;
@@ -104,10 +123,10 @@ p {
   font-size: calc(0.5vw + 1rem);
   padding-bottom: 2rem;
 }
-.main-container .content .group {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.main-container .content #content-bottom-border {
+  position: absolute;
+  transform: translate(0, -100%) rotate(180deg);
+  top: 100%;
 }
 .main-container .round-bottom {
   grid-area: round-bottom;
@@ -120,7 +139,7 @@ p {
   width: 100%;
 }
 .main-container .section {
-  padding: 15% 1rem;
+  padding: 15rem 1rem;
 }
 .main-container .section [class*="__header"] {
   font-size: calc(0.5vw + 1.5rem);
@@ -146,36 +165,62 @@ p {
   position: absolute;
   left: 0;
   transform: translate(-40%, 0);
+  z-index: 1;
+  height: 55%;
 }
 .main-container .about #right-one {
-  height: 50%;
+  height: 40%;
   position: absolute;
   right: 0;
   transform: translate(45%, 40%);
+  z-index: 1;
 }
-.main-container .advanteges {
-  grid-area: advanteges;
-  background: #111;
-  color: #fff;
-}
-.main-container .advanteges .reasons {
-  margin-top: 2.5rem;
-  padding: 0 5%;
+.main-container .steps {
+  grid-area: steps;
   display: flex;
-  flex-flow: nowrap row;
   justify-content: space-around;
+  padding-left: 5rem;
+  padding-right: 5rem;
 }
-.main-container .advanteges .reason {
-  width: 30%;
+.main-container .steps #steps-top-border {
+  position: absolute;
+  margin-top: -26rem;
+  z-index: 0;
+}
+.main-container .steps .chevron {
+  align-self: center;
+  font-size: calc(0.5vw + 1.5rem);
+}
+.main-container .steps .step {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  padding: 2rem;
+  width: 28%;
 }
-.main-container .advanteges .reason .reason__header {
+.main-container .steps .step__number {
   font-size: calc(0.5vw + 1rem);
+  align-self: flex-start;
+  padding-bottom: 4rem;
+  color: #111;
 }
-.main-container .advanteges .reason .icon {
-  height: 200px;
+.main-container .steps .step__icon {
+  display: block;
+  color: #d67500;
+  font-size: calc(3vw + 2rem);
+  padding-bottom: 2rem;
+}
+.main-container .steps .step__heading {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  margin-top: 2rem;
+}
+.main-container .steps .step p {
+  padding-top: 2rem;
+  font-size: calc(0.1vw + 1.1rem);
+  max-width: 80%;
 }
 @media (max-width: 36rem) {
   .group .button {

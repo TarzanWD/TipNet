@@ -1,7 +1,7 @@
 <template>
   <ul class="nav" role="navigation">
     <li class="nav-item">
-        <router-link class="home-btn d-flex" to="/">
+        <router-link class="home-btn d-flex" to="/event">
             <i class="fa fa-home fa-2x"></i>
         </router-link>
     </li>
@@ -23,8 +23,8 @@
     <div id="collapse-menu">
         <ul class="nav" role="navigation">
             <li>
-                <router-link class="nav-link" to="/">
-                    Home
+                <router-link class="nav-link" to="/event">
+                    Akce
                 </router-link>
             </li>
             <li>
