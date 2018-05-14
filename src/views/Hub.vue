@@ -1,20 +1,33 @@
 <template>
   <div class="grid-hub">
-    <div class="events">
-      <h2 class="events__header">
+    <div class="events-area">
+      <h2 class="header-m events-area__main-heading">
         Akce
       </h2>
+      <h5 class="header-m">
+        Otevřené
+      </h5>
       <div class="event-list">
-        <div class="event card">
-          <img src="../../public/img/cl-event-logo.jpg" alt="event-img" class="event__preview">
-          <div class="event__content">
-            <h5 class="event__header">
-              Champions league
-            </h5>
-            <button class="button button--cl btn-block">
-              Vstoupit
-            </button>
-          </div>
+        <event></event>
+        <event></event>
+      </div>
+      <h5 class="header-m">
+        Již uzavřené
+      </h5>
+      <div class="event-list">
+        <event></event>
+      </div>
+    </div>
+    <div class="profile-area">
+      <h2 class="header-m">
+        Profil
+      </h2>
+      <div class="card profile">
+        <div class="card-body">
+          <h5 class="header-m">
+            Junior
+          </h5>
+          <img src="../../public/img/unknown.jpg" class="profile__pic">
         </div>
       </div>
     </div>
@@ -22,9 +35,11 @@
 </template>
 <script>
 import AppHeader from '@/layout/AppHeader.vue'
+import Event from '@/components/hub/Event.vue'
 export default {
     components: {
-        'app-header': AppHeader
+        'app-header': AppHeader,
+        'event': Event
     }
 }
 </script>
@@ -37,40 +52,39 @@ export default {
     padding: @spacer * 10 0;
     grid-template-columns: 1fr 16fr 8fr 1fr;
     grid-template-rows: auto;
-    grid-column-gap: 25px;
     grid-template-areas: 
-      ". events-area you-area .";
+      ". events-area profile-area .";
     background: @background-gray-darker;
   }
-  .events{
+  .events-area{
     grid-area: events-area;
-    &__header{
-      .header-m;
+    &__main-heading{
+      margin-bottom: @spacer * 4;
     }
     .event-list{
       display: flex;
       flex-flow: wrap row;
-      margin-top: @spacer * 8;
+      margin: @spacer * 4 0;
     }
   }
-  .event{
-    width: 48%;
-    display: flex;
-    flex-flow: nowrap row;
-    justify-content: flex-start;
-    align-items: flex-start;
-    &__preview{
-      width: 200px;
-      border-radius: 3px;
-      margin: @spacer * -3 @spacer * 2 @spacer * 2 @spacer * 2;
-      box-shadow: 0 @spacer @spacer @background-gray;
+  .profile-area{
+    grid-area: profile-area;
+  }
+  .profile{
+    margin-top: @spacer * 6;
+    .card-body{
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
     }
-    &__content{
-      padding: @spacer * 3 @spacer * 2;
-      width: auto;
-    }
-    &__header{
-      .header-m;
+    &__pic{
+      order: -1;
+      max-width: @spacer * 14;
+      max-height: @spacer * 14;
+      border-radius: 100%;
+      margin-top: -@spacer * 6;
+      margin-bottom: @spacer * 2;
+      border: 5px solid @white;
     }
   }
 </style>

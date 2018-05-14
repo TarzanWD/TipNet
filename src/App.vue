@@ -34,6 +34,7 @@
         background: @background-gray-darker;
         color: @black;
         &--cl{
+            color: @white;
             background: #0C2F54;
             &:hover{
                 background: lighten(#0C2F54, 5%);
@@ -48,7 +49,7 @@
         }
         &:focus{
             outline: 0;
-        }   
+        }
     }
     .input{
         position: relative;
