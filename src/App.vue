@@ -6,8 +6,10 @@
 <style lang="less">
   @import '../public/css/config.less';
     :root{
-        --theme: #0C2F54;
-        --theme-lighten:lighten(#0C2F54, 5%);
+        --theme: #d67500;
+        --theme-lighten:lighten(#d67500, 10%);
+        --cl: #0C2F54;
+        --cl-lighten:lighten(#0C2F54, 5%);
     }
     #app{
         font-family: @font;
@@ -35,7 +37,7 @@
         color: @black;
         &--cl{
             color: @white;
-            background: #0C2F54;
+            background: var(--cl);
             &:hover{
                 background: lighten(#0C2F54, 5%);
             }
@@ -69,6 +71,32 @@
         display: flex;
         flex-flow: column nowrap;
         justify-content: space-between;
+        .card-footer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            a{
+                .header-m;
+                width: 100%;
+                text-align: center;
+                color: @background-gray;
+                text-transform: uppercase;
+                text-decoration: none;
+            }
+            &--primary{
+                background:var(--theme);
+                &:hover{
+                    background: var(--theme-lighten);
+                }
+            }
+            &--cl{
+                background:var(--cl);
+                &:hover{
+                    background: var(--cl-lighten);
+                }
+            }
+        }
     }
     .card-list{
         display: flex;
@@ -99,27 +127,38 @@
             display: inline-block;
             width: 99%;
             border-top: 0;
-            border-color: var(--theme);
-            color: var(--theme);
+            
             margin: @spacer * 2 @spacer * 0.5;
             border-radius: 0 0 3px 3px;
-            &:hover{
-                background: var(--theme);
-                color: @white;
+            
+            &--primary{
+                border-color: var(--theme);
+                color: var(--theme);
+                &:hover{
+                    background: var(--theme);
+                    color: @white;
+                }
             }
-            &.inverted{
-                border-radius: 3px 3px 0 0 ;
-                border-top: 1px solid var(--theme);
-                border-bottom: 0;
-                margin-top: @spacer * 0.5;
+            &--cl{
+                border-color: var(--cl);
+                color: var(--cl);
+                &:hover{
+                    background: var(--cl);
+                    color: @white;
+                }
             }
         }
         .badge{
             border: 1px solid @background-gray;
             font-size: 1rem;
-            background: var(--theme);
             color: @background-gray;
             .header-m;
+            &--primary{
+                background: var(--theme);
+            }
+            &--cl{
+                background: var(--cl);
+            }
         }
         .table{
             width: 100%;

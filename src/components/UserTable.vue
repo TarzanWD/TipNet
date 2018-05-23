@@ -22,7 +22,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <router-link type="button" class="btn btn-outline-secondary btn-lg btn-block more" to="/table" tag="button">Celé pořadí</router-link>
+                <router-link type="button" class="btn btn-outline-secondary btn-lg btn-block more more--cl" to="/table" tag="button">Celé pořadí</router-link>
             </div>
         </div>
 

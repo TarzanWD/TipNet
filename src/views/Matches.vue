@@ -68,7 +68,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <button class="btn btn-lg btn-block btn-outline-secondary more" @click="renderMoreFixtures()">Více</button>
+                <button class="btn btn-lg btn-block btn-outline-secondary more more--cl" @click="renderMoreFixtures()">Více</button>
             </div>
         </div>
         <div class="finalists">

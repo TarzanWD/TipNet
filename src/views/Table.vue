@@ -81,16 +81,16 @@
             <slot>
               <ul>
                 <li>
-                  <span class="header-m">PT</span> – Počet přesných tipů výsledku <span class="badge">6b</span>
+                  <span class="header-m">PT</span> – Počet přesných tipů výsledku <span class="badge badge--cl">6b</span>
                 </li>
                 <li>
-                  <span class="header-m">V</span> – Počet správných tipů vítěze <span class="badge">3b</span>
+                  <span class="header-m">V</span> – Počet správných tipů vítěze <span class="badge badge--cl">3b</span>
                 </li>
                 <li>
-                  <span class="header-m">R</span> – Počet správných remízových tipů <span class="badge">4b</span>
+                  <span class="header-m">R</span> – Počet správných remízových tipů <span class="badge badge--cl">4b</span>
                 </li>
                 <li>
-                  <span class="header-m">S</span> – Počet bonusů za rozdíl ve skore <span class="badge">1b</span>
+                  <span class="header-m">S</span> – Počet bonusů za rozdíl ve skore <span class="badge badge--cl">1b</span>
                 </li>
                 <li>
                   <span class="header-m">UM</span> – Počet bodů za celkové umístění

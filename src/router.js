@@ -6,6 +6,7 @@ import Matches from '@/views/Matches.vue'
 import Table from '@/views/Table.vue'
 import Rules from '@/views/Rules.vue'
 import Discussion from '@/views/Discussion.vue'
+import Profile from '@/views/Profile.vue'
 import NotFound from '@/views/NotFound.vue'
 Vue.use(Router)
 
@@ -37,6 +38,11 @@ export default new Router({
       path: '/discussion',
       name: 'discussion',
       component: Discussion
+    },
+    {
+      path: '/profile',
+      name: 'profile',
+      component: Profile
     },
     {
       path: '/',

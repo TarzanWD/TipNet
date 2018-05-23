@@ -43,7 +43,7 @@
             </div>
         </div>
     </div>
-    <div class="card-footer">
+    <div class="card-footer card-footer--cl">
         <div v-if="played">
             <a href="#">Detail</a>
         </div>
@@ -117,24 +117,6 @@ export default {
                         font-size: 1.3rem;
                     }
                 }
-            }
-        }
-
-        .card-footer{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background:var(--theme);
-            cursor: pointer;
-
-            a{
-                color: @background-gray;
-                text-transform: uppercase;
-                text-decoration: none;
-            }
-
-            &:hover{
-                background: var(--theme-lighten);
             }
         }
     }

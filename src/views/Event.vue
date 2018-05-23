@@ -11,7 +11,7 @@
                 <match-card :played="false"></match-card>
                 <match-card :played="false"></match-card>
                 <match-card :played="false"></match-card>
-                <button class="btn btn-outline-secondary btn-lg btn-block more"> Více </button>
+                <button class="btn btn-outline-secondary btn-lg btn-block more more--cl"> Více </button>
             </div>
             <stats-box class="points-last-day">
                 <template slot="header">
@@ -44,7 +44,7 @@
                 <match-card :played="true"></match-card>
                 <match-card :played="true"></match-card>
                 <match-card :played="true"></match-card>
-                <button class="btn btn-outline-secondary btn-lg btn-block more"> Více </button>
+                <button class="btn btn-outline-secondary btn-lg btn-block more more--cl"> Více </button>
             </div>
             <discussion :fullDiscussion="false"></discussion>
         </main>

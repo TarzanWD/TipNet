@@ -1,7 +1,7 @@
 <template>
   <ul class="nav" role="navigation">
     <li class="nav-item">
-        <router-link class="home-btn d-flex" to="/event">
+        <router-link class="home-btn d-flex home-btn--cl" to="/event">
             <i class="fa fa-home fa-2x"></i>
         </router-link>
     </li>
@@ -103,14 +103,22 @@ export default {
             justify-content: center;
             align-items: center;
             border: 0;
-            background: var(--theme);
             cursor: pointer;
             text-decoration: none;
-            &:hover{
-                background: var(--theme-lighten);
-            }
             i{
                 color: @background-gray;
+            }
+            &.cl{
+                background: var(--cl);
+                &:hover{
+                    background: var(--cl-lighten);
+                }
+            }
+            &.primary{
+                background: var(--theme);
+                &:hover{
+                    background: var(--theme-lighten);
+                }
             }
         }
         #collapse-menu{

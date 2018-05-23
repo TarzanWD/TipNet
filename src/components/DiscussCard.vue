@@ -17,7 +17,7 @@
               </span>
               <textarea rows="5"></textarea>
           </div>
-          <router-link type="button" class="btn btn-outline-secondary btn-lg btn-block more" to="/discussion" tag="button" v-show="!fullDiscussion">Celá diskuze</router-link>
+          <router-link type="button" class="btn btn-outline-secondary btn-lg btn-block more more--cl" to="/discussion" tag="button" v-show="!fullDiscussion">Celá diskuze</router-link>
       </div>
   </div>
 </template>

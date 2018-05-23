@@ -7,6 +7,12 @@
 .shorter {
   display: none;
 }
+.fb {
+  background: #3b5998;
+}
+.twitter {
+  background: #00aced;
+}
 @media (max-width: 45rem) {
   .shorter {
     display: inline;

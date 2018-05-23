@@ -14,6 +14,46 @@
     </head>
     <body>
         <main class="main-container" role="main">
+            <div class="login-modal" role="document">
+                <div class="card login-card">
+                    <div class="card-body">
+                        <h5 class="login-card__caption">
+                            Login
+                        </h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="nameInput">
+                                    Jméno: 
+                                </label>
+                                <input type="text" class="input" placeholder="Vaše jméno">
+                            </div>
+                            <div class="form-group">
+                                <label for="nameInput">
+                                    Heslo: 
+                                </label>
+                                <input type="text" class="input" placeholder="Vaše heslo">
+                            </div>
+                            <div class="login-card__buttons">
+                                <button class="button" type="submit">
+                                    Odeslat
+                                </button> 
+                            </div>
+                            <div class="login-card__divider">
+                            </div>
+                            <div class="login-card__buttons">
+                                <button class="button fb" type="submit">
+                                    <i class="fab fa-facebook-f"></i>
+                                    Facebook
+                                </button>
+                                <button class="button twitter" type="submit">
+                                    <i class="fab fa-twitter"></i>
+                                    Twitter
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
             <nav class="transparent-nav" role="navigation" id="navbar">
                 <h3 class="transparent-nav__brand">
                     TIPNET
@@ -59,10 +99,6 @@
             </section>
             <section role="region" class="steps section">
                 <div class="step">
-                    <span class="step__number wow pulse">
-                        _01
-                    </span>
-                    <i class="step__icon fas fa-th-list"></i>
                     <h5 class="step__heading">
                         Vyber si akci
                     </h5>
@@ -72,10 +108,6 @@
                 </div>
                 <i class="chevron fas fa-chevron-right"></i>
                 <div class="step">
-                    <span class="step__number wow pulse">
-                        _02
-                    </span>
-                    <i class="step__icon far fa-money-bill-alt"></i>
                     <h5 class="step__heading">
                         Zaplať vstupní vklad
                     </h5>
@@ -85,10 +117,6 @@
                 </div>
                 <i class="chevron fas fa-chevron-right"></i>
                 <div class="step">
-                        <span class="step__number wow pulse">
-                            _03
-                        </span>
-                        <i class="step__icon fas fa-play-circle"></i>
                         <h5 class="step__heading">
                            Tipuj a vyhrej
                         </h5>
@@ -97,8 +125,18 @@
                         </p>
                     </div>
             </section>
-            <section role="region" class="events section">
-
+            <section role="region" class="new section">
+                <figure>
+                    <svg class="phone" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 92 186"><defs><style>.a{fill:none;}.b{fill:#5b5b5b;stroke:rgba(145,145,145,0.6);}.c,.e{fill:#fff;}.c{stroke:#707070;}.d{fill:rgba(145,145,145,0.6);}.f{fill:#333;}.g{fill:#eee;font-size:5px;font-family:Poppins-Bold, Poppins;font-weight:700;}.h{fill:#d67500;}.i{clip-path:url(#a);}.j{fill:#ccc;}.k{stroke:none;}</style><clipPath id="a"><rect class="a" width="82" height="122"/></clipPath></defs><g transform="translate(-28 -29)"><g class="b" transform="translate(28 29)"><rect class="k" width="92" height="186" rx="8"/><rect class="a" x="0.5" y="0.5" width="91" height="185" rx="7.5"/></g><g class="c" transform="translate(67 197)"><circle class="k" cx="7" cy="7" r="7"/><circle class="a" cx="7" cy="7" r="6.5"/></g><rect class="d" width="30" height="2" rx="1" transform="translate(59 36)"/><rect class="e" width="90" height="150" transform="translate(29 44)"/><rect class="f" width="90" height="12" transform="translate(29 44)"/><text class="g" transform="translate(33 52)"><tspan x="0" y="0">TIPNET</tspan></text><circle class="h" cx="7" cy="7" r="7" transform="translate(99 49)"/><g class="i" transform="translate(33 72)"><g transform="translate(-33 -72)"><rect class="j" width="82" height="17" transform="translate(33 72)"/></g><g transform="translate(-33 -50)"><rect class="j" width="82" height="17" transform="translate(33 72)"/></g><g transform="translate(-33 -28)"><rect class="j" width="82" height="17" transform="translate(33 72)"/></g><g transform="translate(-33 -6)"><rect class="j" width="82" height="17" transform="translate(33 72)"/></g><g transform="translate(-33 16)"><rect class="j" width="82" height="17" transform="translate(33 72)"/></g><g transform="translate(-33 38)"><rect class="j" width="82" height="17" transform="translate(33 72)"/></g></g></g></svg>
+                    <figcaption>
+                        <h5 class="new__header">
+                            Nyní v novém
+                        </h5>
+                        <p class="new__text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ac dui enim. Fusce efficitur lorem neque, vel venenatis lacus varius ut. Aliquam pretium elit id erat rhoncus, quis pellentesque tellus scelerisque. Nam ipsum justo, interdum sit amet dolor ac, ornare pretium elit. Fusce cursus enim quis ornare maximus. Aenean laoreet dolor sit amet ligula pellentesque, id elementum nulla tempor.
+                        </p>
+                    </figcaption>
+                </figure>   
             </section>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
             <script>
