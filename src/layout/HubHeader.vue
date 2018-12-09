@@ -1,9 +1,7 @@
 <template>
   <ul class="nav" role="navigation">
     <li class="nav-item">
-        <router-link class="home-btn d-flex home-btn--cl" to="/event">
-            <i class="fa fa-home fa-2x"></i>
-        </router-link>
+        <router-link class="nav-link" to="/event">Domov</router-link>
     </li>
     <li class="nav-item">
         <router-link class="nav-link" to="/matches">Zápasy</router-link>

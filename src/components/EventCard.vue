@@ -3,14 +3,11 @@
     <img src="../../public/img/cl-event-logo.jpg" alt="event-img" class="event__preview">
     <div class="event__content">
       <h5 class="event__header">
-        Champions league
+        Champions league 2018/19
       </h5>
       <time class="event__time">
         22.10.2017 - 18.6.2018
       </time>
-      <div class="event__position">
-        27 <b>z</b> 50
-      </div>
       <router-link to="/event" class="button button--cl btn-block" tag="button">
         Vstoupit
       </router-link>
@@ -43,19 +40,16 @@ export default {}
     &__content{
       display: flex;
       flex-flow: nowrap column;
+      justify-content: space-around;
       padding: @spacer * 3 @spacer * 2;
       width: 100%;
+      height: 100%;
     }
     &__header{
       .header-m;
     }
     &__time{
       padding: @spacer 0;
-    }
-    &__position{
-      text-align: center;
-      font-size: 1.2rem;
-      padding: @spacer * 3;
     }
 }
 </style>

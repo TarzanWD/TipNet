@@ -94,10 +94,10 @@
 import Navbar from '@/layout/Navbar.vue'
 import EventCard from '@/components/EventCard.vue'
 export default {
-    components: {
-        'navbar': Navbar,
-        'event': EventCard
-    }
+  components: {
+    'navbar': Navbar,
+    'event': EventCard
+  }
 }
 </script>
 <style lang="less" scoped>
@@ -108,7 +108,7 @@ export default {
     display: grid;
     grid-template-columns: 5rem 5fr 2fr 5rem;
     grid-template-rows: @spacer * 10 auto;
-    grid-template-areas: 
+    grid-template-areas:
       "navbar navbar navbar navbar"
       ". events-area profile-area .";
     background: @background-gray;
@@ -122,6 +122,10 @@ export default {
       display: flex;
       flex-flow: wrap row;
       margin: @spacer * 4 0;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
   .profile-area{
@@ -190,4 +194,3 @@ export default {
     }
   }
 </style>
-

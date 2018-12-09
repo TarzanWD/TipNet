@@ -1,0 +1,16 @@
+- add loading icon when promise in matches table not resolved yet
+- add navbar color
+- add rooms and settings, looking for new room, suggestions
+- handle hub responsible design
+- handle user settings
+- add user detail
+- handle either no played or no will be played matches in event hub
+- handle no players in event
+- add filtering of matches
+- add adding tips for winners places
+- handle all round stats for teams 
+- add admin settings
+- handle no comments in discussion
+- refactor rules
+- add FAQ
+- add tests

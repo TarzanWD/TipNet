@@ -14,46 +14,6 @@
     </head>
     <body>
         <main class="main-container" role="main">
-            <div class="login-modal" role="document">
-                <div class="card login-card">
-                    <div class="card-body">
-                        <h5 class="login-card__caption">
-                            Login
-                        </h5>
-                        <form>
-                            <div class="form-group">
-                                <label for="nameInput">
-                                    Jméno: 
-                                </label>
-                                <input type="text" class="input" placeholder="Vaše jméno">
-                            </div>
-                            <div class="form-group">
-                                <label for="nameInput">
-                                    Heslo: 
-                                </label>
-                                <input type="text" class="input" placeholder="Vaše heslo">
-                            </div>
-                            <div class="login-card__buttons">
-                                <button class="button" type="submit">
-                                    Odeslat
-                                </button> 
-                            </div>
-                            <div class="login-card__divider">
-                            </div>
-                            <div class="login-card__buttons">
-                                <button class="button fb" type="submit">
-                                    <i class="fab fa-facebook-f"></i>
-                                    Facebook
-                                </button>
-                                <button class="button twitter" type="submit">
-                                    <i class="fab fa-twitter"></i>
-                                    Twitter
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
             <nav class="transparent-nav" role="navigation" id="navbar">
                 <h3 class="transparent-nav__brand">
                     TIPNET
@@ -138,6 +98,51 @@
                     </figcaption>
                 </figure>   
             </section>
+
+            <div class="login-modal" role="document">
+                <div class="card login-card">
+                    <div class="card-body">
+                        <header>
+                            <h5 class="login-card__caption">
+                                Login
+                            </h5>
+                            <i class="chevron fas fa-times"></i>
+                        </header>
+                        <form>
+                            <div class="form-group">
+                                <label for="nameInput">
+                                    Jméno:
+                                </label>
+                                <input type="text" class="input" placeholder="Vaše jméno">
+                            </div>
+                            <div class="form-group">
+                                <label for="nameInput">
+                                    Heslo:
+                                </label>
+                                <input type="text" class="input" placeholder="Vaše heslo">
+                            </div>
+                            <div class="login-card__buttons">
+                                <button class="button" type="submit">
+                                    Odeslat
+                                </button>
+                            </div>
+                            <div class="login-card__divider">
+                            </div>
+                            <div class="login-card__buttons">
+                                <button class="button fb" type="submit">
+                                    <i class="fab fa-facebook-f"></i>
+                                    Facebook
+                                </button>
+                                <button class="button twitter" type="submit">
+                                    <i class="fab fa-twitter"></i>
+                                    Twitter
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
             <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
             <script>
                 new WOW().init();

@@ -152,11 +152,11 @@ export default {
     }
     @media (max-width: @xxl) {
       .content{
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 5rem 2fr 1fr 5rem;
         grid-template-areas:
-          " hub-header hub-header "
-          " ut-heading ut-heading "
-          " user-table user-stats"
+          " . hub-header hub-header . "
+          " . ut-heading ut-heading . "
+          " . user-table user-stats . "
           " . .";
       }
     }

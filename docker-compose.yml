@@ -1,0 +1,13 @@
+version: '3'
+services:
+  app:
+    build:
+      dockerfile: 'docker/Dockerfile'
+      context: '.'
+    command: 'npm run serve'
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/app
+      # exclude folder from volume https://stackoverflow.com/questions/29181032/add-a-volume-to-docker-but-exclude-a-sub-folder
+      - /app/node_modules

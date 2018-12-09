@@ -5,6 +5,7 @@ body{
     overflow-x: hidden;
     padding: 0;
 }
+
 .input{
     position: relative;
     width: 100%;
@@ -18,9 +19,11 @@ body{
         border-bottom: 1px solid @black;
     }
 }
+
 p{
     font-size: ~"calc(0.25vw + 0.95rem)";
 }
+
 .button{
     .header-m;
     font-size: 0.85rem;
@@ -38,11 +41,13 @@ p{
         background:lighten(#d67500, 10%);
     }
 }
+
 .group{
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .login-modal{
     position: fixed;
     top:0;
@@ -56,10 +61,17 @@ p{
     height: 100vh;
     background: rgba(0,0,0,0.60);
     z-index: 2000;
+
     .login-card{
         width: 800px;
         margin-top: 5%;
         padding: @spacer * 4 @spacer * 2;
+        display: none;
+
+        header {
+            display: flex;
+            align-items: center;
+        }
 
         &__caption{
             text-align: center;
@@ -82,6 +94,7 @@ p{
         }
     }
 }
+
 .main-container{
     width: 100%;
     display: grid;
@@ -177,6 +190,7 @@ p{
             width: 100%;
         }
     }
+
     .section{
         padding: 15rem @spacer * 2;
         [class*="__header"]{
@@ -184,6 +198,7 @@ p{
             .header-m;
         } 
     }
+
     .about{
         grid-area: about;
         display: flex;
@@ -192,10 +207,12 @@ p{
         flex-flow: wrap column;
         text-align: center;
         color: @black;
+
         p{
             display: inline-block;
             max-width: 50%;
         }
+
         #left-one{
             position: absolute;
             left: 0;
@@ -203,6 +220,7 @@ p{
             z-index: 1;
             height: 55%;
         }
+
         #right-one{
             height: 40%;
             position: absolute;
@@ -211,33 +229,39 @@ p{
             z-index: 1;
         }
     }
+
     .steps{
         grid-area: steps;
         display: flex;
         justify-content: space-around;
         padding-left:  @spacer * 10;
         padding-right: @spacer * 10;
+
         #steps-top-border{
             position: absolute;
             margin-top: -26rem;
             z-index: 0;
         }
+
         .chevron{
             align-self: center;
             font-size: ~"calc(0.5vw + 1.5rem)";
             color: #d67500;
         }
+
         .step{
             display: flex;
             flex-flow: column nowrap;
             align-items: center;
             padding: @spacer * 4;
             width: 28%;
-            &__heading{
+
+            &__heading {
                 .header-m;
                 margin-top: @spacer * 4;
             }
-            p{
+
+            p {
                 padding-top: @spacer * 4;
                 font-size: ~"calc(0.1vw + 1.1rem)";
                 max-width: 80%;
@@ -247,21 +271,25 @@ p{
     .new{
         grid-area: new;
         padding-top: 5rem;
+
         figure{
             width: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+
             .phone{
                 display: inline-block;
                 width: 20%; // ????????????????????
             }
+
             figcaption{
                 padding-left: 5%;
                 width: 60%;
             }
         }
-        &__header{
+
+        &__header {
             display: inline-block;
         }
     }

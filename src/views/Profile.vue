@@ -119,12 +119,12 @@
 </template>
 <script>
 import Navbar from '@/layout/Navbar.vue'
-import StatsBox from '@/components/StatsBox.vue';
+import StatsBox from '@/components/StatsBox.vue'
 export default {
-    components: {
-        'navbar': Navbar,
-        'stats-box': StatsBox
-    }
+  components: {
+    'navbar': Navbar,
+    'stats-box': StatsBox
+  }
 }
 </script>
 <style lang="less" scoped>
@@ -136,7 +136,7 @@ export default {
         grid-template-columns: 4rem 3fr 2fr 4rem;
         grid-template-rows: @spacer * 10 @spacer * 20 auto;
         grid-column-gap: @spacer * 2;
-        grid-template-areas: 
+        grid-template-areas:
         "navbar navbar navbar navbar"
         ". profile-name events-stats ."
         ". events-history events-stats .";
@@ -208,4 +208,3 @@ export default {
         }
     }
 </style>
-

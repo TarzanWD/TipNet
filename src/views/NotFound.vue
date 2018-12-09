@@ -33,7 +33,7 @@ export default {}
             background-image: url('../../public/img/landing-page-bg2.jpg');
             background-position: center;
             background-size: cover;
-            
+
         }
         .button{
             margin-top: @spacer * 4;

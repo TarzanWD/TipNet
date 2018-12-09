@@ -8,6 +8,7 @@ import Rules from '@/views/Rules.vue'
 import Discussion from '@/views/Discussion.vue'
 import Profile from '@/views/Profile.vue'
 import NotFound from '@/views/NotFound.vue'
+import Detail from '@/views/Detail.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -43,6 +44,11 @@ export default new Router({
       path: '/profile',
       name: 'profile',
       component: Profile
+    },
+    {
+      path: '/detail/:id',
+      name: 'detail',
+      component: Detail
     },
     {
       path: '/',

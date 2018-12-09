@@ -42,6 +42,11 @@
                 background: lighten(#0C2F54, 5%);
             }
         }
+        &--link {
+            background: transparent;
+            font-size: 0.95rem;
+            border: 0;
+        }
         &--primary{
             background: #d67500;
             color: @white;
@@ -127,10 +132,10 @@
             display: inline-block;
             width: 99%;
             border-top: 0;
-            
+
             margin: @spacer * 2 @spacer * 0.5;
             border-radius: 0 0 3px 3px;
-            
+
             &--primary{
                 border-color: var(--theme);
                 color: var(--theme);
