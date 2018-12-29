@@ -15,12 +15,12 @@
         'button--link': true
       }">
         Přidat
-    </button>             
+    </button>
   </div>
 </template>
 
 <style lang="less" scoped>
-@import '../../../public/css/config.less';
+@import '../../../../public/css/config.less';
 
 .add-post {
   display: flex;

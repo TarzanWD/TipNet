@@ -9,6 +9,7 @@ import Discussion from '@/views/Discussion.vue'
 import Profile from '@/views/Profile.vue'
 import NotFound from '@/views/NotFound.vue'
 import Detail from '@/views/Detail.vue'
+import NewRoom from '@/views/NewRoom.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -16,27 +17,27 @@ export default new Router({
   linkExactActiveClass: 'active',
   routes: [
     {
-      path: '/event',
+      path: '/event/:id',
       name: 'event',
       component: Event
     },
     {
-      path: '/matches',
+      path: '/event/:id/matches',
       name: 'matches',
       component: Matches
     },
     {
-      path: '/table',
+      path: '/event/:id/table',
       name: 'table',
       component: Table
     },
     {
-      path: '/rules',
+      path: '/event/:id/rules',
       name: 'rules',
       component: Rules
     },
     {
-      path: '/discussion',
+      path: '/event/:id/discussion',
       name: 'discussion',
       component: Discussion
     },
@@ -46,9 +47,14 @@ export default new Router({
       component: Profile
     },
     {
-      path: '/detail/:id',
+      path: '/event/:id/detail/:matchId',
       name: 'detail',
       component: Detail
+    },
+    {
+      path: '/new-room',
+      name: 'new-room',
+      component: NewRoom
     },
     {
       path: '/',

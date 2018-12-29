@@ -1,9 +1,7 @@
 <template>
   <article class="post">
     <div class="post__side">
-      <h5>
-        {{ post.owner }}
-      </h5>
+      {{ post.owner }}
     </div>
     <div class="post__text">
       {{ post.text }}
@@ -23,7 +21,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import '../../../public/css/config.less';
+@import '../../../../public/css/config.less';
 
 .post {
   display: flex;
@@ -32,26 +30,23 @@ export default {
 }
 
 .post__side {
+  .header-m;
+  font-size: 1rem;
   order: 0;
   display: flex;
-  width: 20%;
+  width: 25%;
   border-right: 1px solid @background-gray;
-  
-  h5 {
-    .header-m;
-    font-size: 1rem;
-  }
 }
 
 .post__text {
   order: 1;
-  width: 80%;
+  width: 75%;
   padding-left: @spacer * 2;
 }
 
 @media (max-width: @sm) {
   .post {
-    flex-direction: column;      
+    flex-direction: column;
   }
 
   .post__side{
@@ -59,4 +54,3 @@ export default {
   }
 }
 </style>
-

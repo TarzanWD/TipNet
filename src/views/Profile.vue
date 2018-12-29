@@ -119,7 +119,7 @@
 </template>
 <script>
 import Navbar from '@/layout/Navbar.vue'
-import StatsBox from '@/components/StatsBox.vue'
+import StatsBox from '@/components/StatsBox'
 export default {
   components: {
     'navbar': Navbar,

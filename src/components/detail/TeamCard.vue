@@ -66,7 +66,6 @@ export default {
 }
 </script>
 
-
 <style lang="less" scoped>
 @import '../../../public/css/config.less';
 .team {

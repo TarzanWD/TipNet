@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <Card>
     <card-header
       :home-team="match.homeTeam"
       :away-team="match.awayTeam"
@@ -33,19 +33,24 @@
       </div>
     </div>
     <card-footer :match-id="match.id" />
-  </div>
+  </Card>
 </template>
 <script>
-import MatchCardHeader from './MatchCardHeader.vue'
-import MatchCardFooter from './MatchCardFooter.vue'
+import Card from '@/components/Card'
+import MatchCardHeader from './components/MatchCardHeader.vue'
+import MatchCardFooter from './components/MatchCardFooter.vue'
 export default {
   components: {
+    Card,
     'card-header': MatchCardHeader,
     'card-footer': MatchCardFooter
   },
-  props: [
-    'played'
-  ],
+  props: {
+    played: {
+      type: Boolean,
+      required: true
+    }
+  },
   data () {
     return {
       tip: {
@@ -55,7 +60,7 @@ export default {
       },
       match: {
         id: 125,
-        date: "Sat Dec 08 2018 20:15:30 GMT+0100 (Středoevropský standardní čas)",
+        date: 'Sat Dec 08 2018 20:15:30 GMT+0100 (Středoevropský standardní čas)',
         homeTeam: {
           name: 'FC Barcelona',
           goals: 2,
@@ -65,7 +70,7 @@ export default {
           name: 'Real Madrid CF',
           goals: 2,
           logo: 'http://icons.iconarchive.com/icons/giannis-zographos/spanish-football-club/256/Real-Madrid-icon.png'
-        },
+        }
       }
     }
   }
@@ -74,8 +79,9 @@ export default {
 <style lang="less" scoped>
 @import '../../../public/css/config.less';
 .card {
-  display: block;
   font-family: @font;
+  margin-right: @spacer * 2;
+  width: 100%;
 }
 
 .card__body {

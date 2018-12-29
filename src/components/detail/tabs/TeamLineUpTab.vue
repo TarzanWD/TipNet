@@ -50,7 +50,7 @@ export default {
           id: 2,
           name: 'Ousmane Dembele',
           number: 11,
-          position: 0,
+          position: 0
         },
         {
           id: 3,
@@ -75,7 +75,6 @@ export default {
   }
 }
 </script>
-
 
 <style lang="less" scoped>
 @import '../../../../public/css/config.less';

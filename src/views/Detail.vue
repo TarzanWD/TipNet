@@ -1,32 +1,25 @@
 <template>
-  <div class="grid">
-    <app-header />
-    <main role="main" class="content">
-      <hub-header />
-      <score class="score" />
-      <tip class="tip" />
-      <teams class="teams" />
-      <discussion :fullDiscussion="true" class="discussion" />
-    </main>
-    <app-footer />
-  </div>
+  <EventLayout>
+    <Score class="score" />
+    <Teams class="teams" />
+    <Discussion
+      :fullDiscussion="false"
+      class="discussion"
+    />
+  </EventLayout>
 </template>
 
 <script>
-import AppHeader from '@/layout/AppHeader.vue'
-import AppFooter from '@/layout/AppFooter.vue'
-import HubHeader from '@/layout/HubHeader.vue'
+import EventLayout from '@/layout/EventLayout'
 import Score from '@/components/detail/Score.vue'
 import Teams from '@/components/detail/Teams.vue'
-import Discussion from '@/components/DiscussCard.vue'
+import Discussion from '@/components/DiscussionCard'
 export default {
   components: {
-    'app-header': AppHeader,
-    'app-footer': AppFooter,
-    'hub-header': HubHeader,
-    'score': Score,
-    'teams': Teams,
-    'discussion': Discussion
+    EventLayout,
+    Score,
+    Teams,
+    Discussion
   }
 }
 </script>

@@ -11,6 +11,14 @@
 - handle all round stats for teams 
 - add admin settings
 - handle no comments in discussion
-- refactor rules
+- refactor rules, make it more interesting
+- refactor layouts
 - add FAQ
 - add tests
+- switch to scss
+- add more color and animations
+- hub
+  - show user achivements
+  - show updates upgrades
+  - show actions invitations
+  - show new events

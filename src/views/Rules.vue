@@ -1,9 +1,6 @@
 <template>
-    <div class="grid">
-        <app-header></app-header>
-        <main role="main" class="content">
-            <hub-header></hub-header>
-            <h2 class="header-m about-h">
+  <EventLayout>
+    <h2 class="header-m about-h">
                 O co jde?
             </h2>
             <section class="about" role="region">
@@ -75,19 +72,13 @@
                     </li>
                 </ol>
             </section>
-        </main>
-        <app-footer></app-footer>
-    </div>
+  </EventLayout>
 </template>
 <script>
-import AppHeader from '@/layout/AppHeader.vue'
-import AppFooter from '@/layout/AppFooter.vue'
-import HubHeader from '@/layout/HubHeader.vue'
+import EventLayout from '@/layout/EventLayout'
 export default {
   components: {
-    'app-header': AppHeader,
-    'app-footer': AppFooter,
-    'hub-header': HubHeader
+    EventLayout
   }
 }
 </script>

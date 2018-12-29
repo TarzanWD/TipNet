@@ -15,20 +15,11 @@
         font-family: @font;
         background: @background-gray-darker;
     }
-    .grid{
-        display: grid;
-        grid-template-rows: (@spacer*50) auto (@spacer*10);
-        grid-template-columns: (@spacer*10) auto (@spacer*10);
-        width:100%;
-        grid-template-areas:
-                "poster poster poster"
-                ". content ."
-                "footer footer footer";
-    }
+
     .button{
         .header-m;
-        font-size: 0.85rem;
-        padding: @spacer * 1.5 @spacer * 2.5;
+        font-size: 0.75rem;
+        padding: @spacer * 1.25 @spacer * 1.75;
         margin: 0 @spacer;
         border: 1px solid @white;
         border-radius: 25px;
@@ -110,20 +101,12 @@
             width: 49%;
         }
     }
-    .content{
-        grid-area: content;
-        position: relative;
-        z-index: 10;
-        background: @background-gray;
-        margin-top: -10 * @spacer;
-        display: grid;
-    }
     .section-header{
             .header-m;
             display: flex;
             align-items: center;
             font-size: 1rem;
-            margin-top: @spacer;
+            margin-top: @spacer * 2;
             margin-bottom: 0;
             margin-left: @spacer * 3;
         }

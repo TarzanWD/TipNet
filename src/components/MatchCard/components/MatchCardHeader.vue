@@ -41,15 +41,14 @@ export default {
   },
   filters: {
     localeDateString (value) {
-      return new Date(value).toLocaleDateString('cz-CZ', { hour: '2-digit', minute: '2-digit'})
+      return new Date(value).toLocaleDateString('cz-CZ', { hour: '2-digit', minute: '2-digit' })
     }
   }
 }
 </script>
 
-
 <style lang="less" scoped>
-@import '../../../public/css/config.less';
+@import '../../../../public/css/config.less';
 
 .card-header{
   display: flex;
@@ -63,7 +62,7 @@ export default {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  
+
   h4 {
     display: inline-block;
     margin-bottom:0;
@@ -96,4 +95,3 @@ export default {
   }
 }
 </style>
-
