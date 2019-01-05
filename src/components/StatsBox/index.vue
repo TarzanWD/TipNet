@@ -1,10 +1,15 @@
 <template>
-  <div class="card statsbox">
+  <div :class="{
+    'card': true,
+    'statsbox': true,
+    'statsbox--transparent': transparent,
+    'statsbox--info': info
+  }">
     <div class="card-body">
       <span class="statsbox__title">
         <slot name="header" />
       </span>
-      <h3 v-if="withTitle" class="statsbox__value">
+      <h3 v-if="!withoutTitle" class="statsbox__value">
         <slot />
       </h3>
       <slot v-else />
@@ -15,9 +20,17 @@
 <script>
 export default {
   props: {
-    withTitle: {
+    withoutTitle: {
       type: Boolean,
-      default: () => true
+      default: () => false
+    },
+    transparent: {
+      type: Boolean,
+      default: () => false
+    },
+    info: {
+      type: Boolean,
+      default: () => false
     }
   }
 }
@@ -29,6 +42,11 @@ export default {
 
 .statsbox {
   width: 100%;
+}
+
+.statsbox--transparent {
+  background: transparent;
+  border: 0;
 }
 
 .statsbox__title {
@@ -44,5 +62,13 @@ export default {
   align-items: center;
   font-size: @spacer * 8;
   height: @spacer * 16;
+}
+
+.statsbox--info {
+  background: #0e1924;
+  color: @white;
+  width: 20rem;
+  border-color: var(--cl-lighten);
+  border-radius: 1rem;
 }
 </style>

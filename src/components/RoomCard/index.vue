@@ -3,7 +3,7 @@
     <div class="room-card__image">
       <header class="room-card__header">
         <span class="room-card__heading">
-          Benefit CZ
+          {{ room.card }}
         </span>
         <i
           class="fa fa-cogs"
@@ -11,10 +11,17 @@
       </header>
       <div class="room-card__body">
         <h5 class="room-card__heading">
-          Champions League 2017/2018
+          {{ event.name }}
         </h5>
         <i
+          class="fa fa-plus mr-1"
+          v-if="addButton"
+          @click="onClick"
+        />
+        <i
           class="fa fa-chevron-right mr-1"
+          v-else
+          @click="onClick"
         />
       </div>
     </div>
@@ -35,12 +42,20 @@ export default {
     event: {
       type: Object,
       required: true
+    },
+    addButton: {
+      type: Boolean,
+      default: () => false
+    },
+    onClick: {
+      type: Function,
+      default: () => false
     }
-  }
+  },
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 @import '../../../public/css/config.less';
 
 .room-card {
@@ -80,11 +95,16 @@ export default {
   width: 100%;
 }
 
+.room-card__body i {
+  cursor: pointer;
+}
+
 .room-card__heading {
   .header-m;
   color: @white;
   font-size: 0.8rem;
   margin-bottom: 0;
+  max-width: 70%;
 }
 
 

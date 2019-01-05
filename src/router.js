@@ -10,6 +10,8 @@ import Profile from '@/views/Profile.vue'
 import NotFound from '@/views/NotFound.vue'
 import Detail from '@/views/Detail.vue'
 import NewRoom from '@/views/NewRoom.vue'
+import FindRoom from '@/views/FindRoom'
+import RoomDetail from '@/views/RoomDetail'
 Vue.use(Router)
 
 export default new Router({
@@ -55,6 +57,16 @@ export default new Router({
       path: '/new-room',
       name: 'new-room',
       component: NewRoom
+    },
+    {
+      path: '/find-room',
+      name: 'find-room',
+      component: FindRoom
+    },
+    {
+      path: '/room-detail/:id',
+      name: 'room-detail',
+      component: RoomDetail
     },
     {
       path: '/',

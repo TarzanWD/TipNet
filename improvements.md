@@ -22,3 +22,8 @@
   - show updates upgrades
   - show actions invitations
   - show new events
+- room detail
+  - people
+  - entry
+  - private or public
+  - length of event

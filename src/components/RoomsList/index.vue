@@ -5,7 +5,7 @@
         Vaše místnosti
       </h5>
       <div>
-        <Button primary>
+        <Button primary :click="() => $router.push('find-room')">
           Přidej se k akci
         </Button>
         <Button primary>
@@ -19,6 +19,7 @@
         :key="room.id"
         :room="room"
         :event="events[room.eventId]"
+        :onClick="() => $router.push({ name: 'event', params: { id: 0 } })"
       />
     </div>
     <h5 class="rooms-list__heading">
@@ -67,10 +68,10 @@ export default {
       ],
       events: {
         0: {
-          name: 'Champions League 2018 / 19'
+          name: 'Champions League 2018/19'
         },
         1: {
-          name: 'Champions League 2019 / 20'
+          name: 'Champions League 2019/20'
         }
       }
     }

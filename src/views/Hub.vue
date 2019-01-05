@@ -3,6 +3,7 @@
     <Navbar class="navbar-light" />
     <IntroSection class="intro" />
     <RoomsList class="rooms" />
+    <Notifications class="notifications" />
   </main>
 </template>
 
@@ -10,11 +11,17 @@
 import Navbar from '@/layout/Navbar'
 import IntroSection from '@/components/IntroSection'
 import RoomsList from '@/components/RoomsList'
+import Notifications from '@/components/Notifications'
 export default {
   components: {
     Navbar,
     IntroSection,
-    RoomsList
+    RoomsList,
+    Notifications
+  },
+  created () {
+    this.$store.dispatch('events/loadEvents')
+    console.log(this.$store.getters['events/getState'])
   }
 }
 </script>
@@ -27,7 +34,8 @@ export default {
   grid-template-rows: auto;
   grid-template-areas:
     "intro ."
-    "rooms .";
+    "rooms notifications";
+  grid-column-gap: 5vw;
   width: 100%;
   min-height: 100vh;
   background: @white;
@@ -40,5 +48,9 @@ export default {
 
 .rooms {
   grid-area: rooms;
+}
+
+.notifications {
+  grid-area: notifications;
 }
 </style>

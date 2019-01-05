@@ -1,7 +1,7 @@
 <template>
-  <Card>
-    <CardBody>
-      <div class="input-group">
+  <Card :childrenOnly="onlyTable">
+    <CardBody :childrenOnly="onlyTable">
+      <div class="input-group" v-show="!onlyTable">
         <label
           for="user-search-box"
           class="header-m"
@@ -117,7 +117,7 @@
         class="btn btn-outline-secondary btn-lg btn-block more more--cl"
         to="/table"
         tag="button"
-        v-show="!fullTable"
+        v-show="!fullTable && !onlyTable"
       >
         Celé pořadí
       </router-link>
@@ -134,6 +134,10 @@ export default {
   },
   props: {
     fullTable: {
+      type: Boolean,
+      default: () => false
+    },
+    onlyTable: {
       type: Boolean,
       default: () => false
     }
@@ -300,6 +304,7 @@ export default {
 }
 
 .table-card__table {
+  font-size: 0.85rem;
   tr:first-child td {
     border-top: 0;
   }

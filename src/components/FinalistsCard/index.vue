@@ -1,5 +1,5 @@
 <template>
-  <StatsBox :withTitle="false">
+  <StatsBox withoutTitle>
     <template slot="header">
       Tipy na umístění
     </template>

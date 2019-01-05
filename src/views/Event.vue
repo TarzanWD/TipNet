@@ -45,7 +45,7 @@ export default {
   }
 }
 </script>
-<style lang="less">
+<style lang="less" scoped>
 @import '../../public/css/config.less';
 .stats {
   width: 100%;

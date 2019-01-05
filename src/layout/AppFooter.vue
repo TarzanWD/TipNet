@@ -21,7 +21,7 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
-  padding: (@spacer * 4) (@spacer*10);
+  padding: (@spacer * 3) (@spacer*10);
   background: @black;
   color: @white;
 }

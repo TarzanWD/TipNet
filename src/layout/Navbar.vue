@@ -1,8 +1,17 @@
 <template>
   <nav class="navbar navbar-expand">
+    <span
+      class="navbar-brand header-m"
+      @click="$router.go(-1)"
+      v-if="backOption"
+    >
+      <i class="fa fa-arrow-left mr-3" />
+      Zpět
+    </span>
     <router-link
       class="navbar-brand header-m"
       to="/"
+      v-else
     >
       TIPNET
     </router-link>
@@ -28,6 +37,18 @@
     </div>
   </nav>
 </template>
+
+<script>
+export default {
+  props: {
+    backOption: {
+      type: Boolean,
+      default: () => false
+    }
+  }
+}
+</script>
+
 
 <style lang="less" scoped>
 @import '../../public/css/config.less';
